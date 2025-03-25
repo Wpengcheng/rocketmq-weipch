@@ -28,11 +28,10 @@ public class BroadCastProducer {
                 // 构建消息
                 Message message = new Message("TopicTest", "model", ("Hello RocketMQ " + i).getBytes());
                 // 单向发送消息，不需要等待服务端响应
-                producer.sendOneway(message);
+//                producer.sendOneway(message);
                 // 同步发送
-                SendResult sendResult = producer.send(message, 20 * 1000);
-                System.out.printf("同步发送结果：%s%n", sendResult);
-
+//                SendResult sendResult = producer.send(message, 20 * 1000);
+//                System.out.printf("同步发送结果：%s%n", sendResult);
                 // 异步发送，需要回调
                 producer.send(message, new SendCallback() {
                     @Override
